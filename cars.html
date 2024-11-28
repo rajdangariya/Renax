@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <link rel="stylesheet" href="cars.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">RENAX</div>
+            <ul class="nav-links">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="cars.html" id="h">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </nav>
+    </header>
+    <section class="hero">
+        <!-- Add the image tag here -->
+        <img src="img2.jpg" alt="Car Image"> <!-- Replace with your image path -->
+        <div class="hero-content">
+            <p>Select Your Car</p>
+            <h1>Luxury Car Fleet</h1>
+        </div>    
+    </section>
+    <div class="container">
+        <div class="card1">
+          <img src="card3.jpg" class="image" alt="Lamborghini Urus">
+          <div class="content">
+            <h2>Lamborghini Urus</h2>
+            <div class="details">
+              <span>5 <i class="fas fa-user"></i></span>
+              <span>Auto <i class="fas fa-car"></i></span>
+              <span>2 Bags <i class="fas fa-suitcase"></i></span>
+              <button>Details</button>
+              <span>$750/day</span>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card2">
+          <img src="card2.jpg" class="image" alt="Aston Martin DBX">
+          <div class="content">
+            <h2>Aston Martin DBX</h2>
+            <div class="details">
+              <span>4 <i class="fas fa-user"></i></span>
+              <span>Auto <i class="fas fa-car"></i></span>
+              <span>2 Bags <i class="fas fa-suitcase"></i></span>
+              <button>Details</button>
+              <span>$500/day</span>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card3">
+          <img src="card1.jpg" class="image" alt="Bugatti Mistral W16">
+          <div class="content">
+            <h2>Bugatti Mistral W16</h2>
+            <div class="details">
+              <span>4 <i class="fas fa-user"></i></span>
+              <span>Auto <i class="fas fa-car"></i></span>
+              <span>2 Bags <i class="fas fa-suitcase"></i></span>
+              <button>Details</button>
+              <span>$800/day</span>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card4">
+          <img src="card2.jpg" class="image" alt="Bentley Bentayga">
+          <div class="content">
+            <h2>Bentley Bentayga</h2>
+            <div class="details">
+              <span>4 <i class="fas fa-user"></i></span>
+              <span>Auto <i class="fas fa-car"></i></span>
+              <span>2 Bags <i class="fas fa-suitcase"></i></span>
+              <button>Details</button>
+              <span>$600/day</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-phone"></i> <!-- Call Icon -->
+                </div>
+                <p>Call us</p>
+                <p>+971 52-333-4444</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i> <!-- Email Icon -->
+                </div>
+                <p>Write to us</p>
+                <p>info@renax.com</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-map-marker-alt"></i> <!-- Address Icon -->
+                </div>
+                <p>Address</p>
+                <p>Dubai, Water Tower, Office 123</p>
+            </div>
+        </div>
+    
+
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <h2 class="footer-logo">RENAX</h2>
+                <p>Rent a car imperdiet sapien porttitor the bibenum ellenteseu the commodo erat nesuen.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">X</a>
+                    <a href="#" class="social-icon">TikTok</a>
+                </div>
+            </div>
+            <div class="footer-middle">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="service.html">Services</a></li>
+                  <li><a href="cars.html">Cars</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </div>
+            <div class="footer-right">
+                <h3>Subscribe</h3>
+                <p>Want to be notified about our services? Just sign up and we'll send you a notification by email.</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">→</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    
+      <script>
+        // Toggle navigation for mobile view
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script src="jQuery.js"></script>
+    <script>
+      $(document).ready(function () {
+          // When mouse enters the hero section
+          $('.hero').mouseenter(function () {
+              // Change the image source
+              $(this).find('img').fadeOut(300, function() {
+                  $(this).attr('src', 'img5.jpg'); // New image path
+                  $(this).fadeIn(100);
+              });
+          });
+
+          // When mouse leaves the hero section
+          $('.hero').mouseleave(function () {
+              // Revert the image back to original
+              $(this).find('img').fadeOut(300, function() {
+                  $(this).attr('src', 'img2.jpg'); // Original image path
+                  $(this).fadeIn(100);
+              });
+          });
+      });
+  </script>
+
+</body>
+</html>

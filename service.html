@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+      <!-- Sticky Navigation -->
+      <header class="main-head">
+        <nav class="navbar">
+            <div class="logo">RENAX</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html" id="h">Services</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        </nav>
+    </header>
+    <main>
+        <section class="rd">
+            <!-- Add the image tag here -->
+            <img src="img9.jpg" alt="Car Image"> <!-- Replace with your image path -->
+            <div class="rd-content">
+                <p>WHAT WE DO<p>
+                <h1>Our Services<h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="card1">
+              <div class="circle">1.</div>
+              <h2>Corporate Car Rental</h2>
+              <p>Lorem ipsum dolor sit amet the consectetur adipiscing elit entesque hendrerit elit nisan lacinia feugiat nunc eu aucton.</p>
+            </div>
+            <div class="card2">
+              <div class="circle">2.</div>
+              <h2>Car Rental with Driver</h2>
+              <p>Lorem ipsum dolor sit amet the consectetur adipiscing elit entesque hendrerit elit nisan lacinia feugiat nunc eu aucton.</p>
+            </div>
+            <div class="card3">
+              <div class="circle">3.</div>
+              <h2>Airport Transfer</h2>
+              <p>Lorem ipsum dolor sit amet the consectetur adipiscing elit entesque hendrerit elit nisan lacinia feugiat nunc eu aucton.</p>
+            </div>
+            <div class="card4">
+              <div class="circle">4.</div>
+              <h2>Fleet Leasing</h2>
+              <p>Lorem ipsum dolor sit amet the consectetur adipiscing elit entesque hendrerit elit nisan lacinia feugiat nunc eu aucton.</p>
+            </div>
+            <div class="card5">
+              <div class="circle">5.</div>
+              <h2>VIP Transfer</h2>
+              <p>Lorem ipsum dolor sit amet the consectetur adipiscing elit entesque hendrerit elit nisan lacinia feugiat nunc eu aucton.</p>
+            </div>
+            <div class="card6">
+              <div class="circle">6.</div>
+              <h2>Private Transfer</h2>
+              <p>Lorem ipsum dolor sit amet the consectetur adipiscing elit entesque hendrerit elit nisan lacinia feugiat nunc eu aucton.</p>
+            </div>
+          </div>
+    </main>
+    <footer class="footer">
+      <div class="contact-info">
+          <div class="contact-item">
+              <div class="icon">
+                  <i class="fas fa-phone"></i> <!-- Call Icon -->
+              </div>
+              <p>Call us</p>
+              <p>+971 52-333-4444</p>
+          </div>
+          <div class="contact-item">
+              <div class="icon">
+                  <i class="fas fa-envelope"></i> <!-- Email Icon -->
+              </div>
+              <p>Write to us</p>
+              <p>info@renax.com</p>
+          </div>
+          <div class="contact-item">
+              <div class="icon">
+                  <i class="fas fa-map-marker-alt"></i> <!-- Address Icon -->
+              </div>
+              <p>Address</p>
+              <p>Dubai, Water Tower, Office 123</p>
+          </div>
+      </div>
+  
+
+      <div class="footer-bottom">
+          <div class="footer-left">
+              <h2 class="footer-logo">RENAX</h2>
+              <p>Rent a car imperdiet sapien porttitor the bibenum ellenteseu the commodo erat nesuen.</p>
+              <div class="social-icons">
+                  <a href="#" class="social-icon">Facebook</a>
+                  <a href="#" class="social-icon">X</a>
+                  <a href="#" class="social-icon">TikTok</a>
+              </div>
+          </div>
+          <div class="footer-middle">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+          <div class="footer-right">
+              <h3>Subscribe</h3>
+              <p>Want to be notified about our services? Just sign up and we'll send you a notification by email.</p>
+              <form>
+                  <input type="email" placeholder="Your email address">
+                  <button type="submit">→</button>
+              </form>
+          </div>
+      </div>
+  </footer>
+    <script>
+        // Toggle navigation for mobile view
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script src="jQuery.js"></script>
+    <script>
+    $(document).ready(function () {
+    // Apply scaling effect on hover for service cards
+    $('.card1, .card2, .card3, .card4, .card5, .card6').hover(
+        function () {
+            $(this).css('transform', 'scale(1.05)');  // On mouse enter, scale up
+        },
+        function () {
+            $(this).css('transform', 'scale(1)');  // On mouse leave, scale back to original
+        }
+    );
+});
+
+</script>
+</body>
+</html>

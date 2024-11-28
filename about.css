@@ -1,0 +1,397 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: #ff8800;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+#h{
+    color: #ff8800;
+}
+.nav-links a:hover {
+    color: #ffa500; /* Orange color on hover */
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        display: block;
+    }
+}
+
+/* Section Styling */
+.raj {
+    position: relative;
+    text-align: center;
+}
+
+.raj img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.5);
+}
+
+.raj-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.raj-content p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f2a200;
+}
+
+.raj-content h1 {
+    font-size: 48px;
+    margin: 10px 0;
+    color: aliceblue;
+}
+
+/* Promo Section */
+.promo-section {
+    position: relative;
+    margin-top: 50px;
+}
+
+.promo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.5);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.explore-text {
+    font-size: 20px;
+    color: #f2a200;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    color: #fff;
+}
+
+h1 span {
+    color: #f2a200;
+}
+
+.play-button {
+    display: inline-block;
+    margin-top: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(242, 162, 0, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-left: 45%;
+}
+
+.play-button:hover {
+    background-color: #f2a200;
+}
+
+.play-button i {
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: -10%;
+}
+
+.h2 {
+    font-size: large;
+    font-weight: 700;
+    color: #f2a200;
+    margin-left: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.5;
+}
+
+.info-icon {
+    background-color: #ffc107;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.footer {
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    background-color: #222;
+}
+
+.contact-item {
+    text-align: center;
+    flex: 1;
+}
+
+.contact-item .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #f2a200;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-size: 30px;
+    color: #f2a200;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.footer-middle h3, .footer-right h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #f2a200;
+}
+
+.footer-middle ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-middle ul li {
+    margin-bottom: 10px;
+}
+
+.footer-middle ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-right form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #f2a200;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.footer-right input {
+    border: none;
+    padding: 10px;
+    flex: 1;
+    color: #000;
+}
+
+.footer-right button {
+    background-color: #f2a200;
+    border: none;
+    padding: 10px 20px;
+    color: #000;
+    cursor: pointer;
+}
+
+.icon i {
+    font-size: 30px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+/* Responsive Styling */
+@media only screen and (max-width: 1200px) {
+    .raj-content h1 {
+        font-size: 36px;
+    }
+    .play-button {
+        margin-left: 40%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .raj-content p {
+        font-size: 18px;
+    }
+    .raj-content h1 {
+        font-size: 28px;
+    }
+    .explore-text {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .play-button {
+        margin-left: 35%;
+    }
+    .h2 {
+        margin-left: 30%;
+    }
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .raj-content p {
+        font-size: 16px;
+    }
+    .raj-content h1 {
+        font-size: 24px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .play-button {
+        margin-left: 30%;
+    }
+    .h2 {
+        margin-left: 20%;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-icons {
+        margin-top: 10px;
+    }
+}

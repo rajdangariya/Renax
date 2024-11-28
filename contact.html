@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset default styles */
+        body, h1, h2, h3, p, ul, li, input, textarea, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background-color: #000;
+            color: #fff;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            color: #ff8800;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        #h {
+            color: #ff8800;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #ffa500;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 50vh;
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+
+        .hero-content {
+            position: absolute;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-content p {
+            font-size: 1em;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .contact-info1,
+        .map {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .contact-info1 h2,
+        .map h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact-info1 label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .contact-info1 input,
+        .contact-info1 textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-info1 button {
+            padding: 10px 20px;
+            background-color: #ff8800;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-info1 button:hover {
+            background-color: #ffa500;
+        }
+
+        #map iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            background-color: #222;
+        }
+
+        .contact-item {
+            text-align: center;
+            flex: 1;
+            margin: 10px;
+        }
+
+        .contact-item .icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f2a200;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-left,
+        .footer-middle,
+        .footer-right {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .footer-logo {
+            font-size: 30px;
+            color: #f2a200;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            margin-right: 15px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .footer-middle ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-middle ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-middle ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-right form {
+            display: flex;
+            border: 1px solid #f2a200;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .footer-right input {
+            border: none;
+            padding: 10px;
+            flex: 1;
+        }
+
+        .footer-right button {
+            background-color: #f2a200;
+            border: none;
+            padding: 10px 20px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-item {
+                margin: 10px 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            #map iframe {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8em;
+            }
+
+            .hero-content p {
+                font-size: 0.9em;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-left,
+            .footer-middle,
+            .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-right form {
+                flex-direction: column;
+            }
+
+            .footer-right input,
+            .footer-right button {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+        /* Error message styling */
+        .error {
+            margin-top: 5px;
+            font-size: 0.875rem;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">RENAX</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="contact.html" id="h">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="img4.jpg" alt="Car Image">
+            <div class="hero-content">
+                <p>FOR HELP</p>
+                <h1>Contact Us</h1>
+            </div>
+        </section>
+    </main>
+
+    <div class="container">
+        <div class="contact-info1">
+            <h2>Get in Touch</h2>
+            <form id="contact-form" action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <div class="error" id="name-error"></div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="email-error"></div>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+                <div class="error" id="message-error"></div>
+
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </div>
+
+        <div class="map" id="map">
+            <h2>Find us</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.4397223800694!2d-74.00601568459573!3d40.71277597932915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259afbb65f15b%3A0x6cf3967ad11b1071!2sNew%20York%20City%20Hall!5e0!3m2!1sen!2sus!4v1602523733620!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <p>+123 456 789</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <p>info@renax.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <p>123 Main Street, City, Country</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <div class="footer-logo">RENAX</div>
+                </div>
+
+                <div class="footer-middle">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-right">
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting and reloading the page.
+
+    let valid = true;
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+
+    // Name validation
+    if (name.trim() === '') {
+        document.getElementById('name-error').innerText = 'Name is required.';
+        valid = false;
+    } else {
+        document.getElementById('name-error').innerText = '';
+    }
+
+    // Email validation
+    if (email.trim() === '') {
+        document.getElementById('email-error').innerText = 'Email is required .';
+        valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+        document.getElementById('email-error').innerText = 'Please enter a valid email.';
+        valid = false;
+    } else {
+        document.getElementById('email-error').innerText = '';
+    }
+
+    // Message validation
+    if (message.trim() === '') {
+        document.getElementById('message-error').innerText = 'Message is required.';
+        valid = false;
+    } else {
+        document.getElementById('message-error').innerText = '';
+    }
+
+    // If all fields are valid, show success message without reloading
+    if (valid) {
+        alert('Form submitted successfully!');
+        
+        // Optionally clear the form fields after successful submission
+        document.getElementById('contact-form').reset();
+    }
+    
+    // Return false explicitly to ensure the page does not reload
+    return false;
+});
+
+
+    </script>
+</body>
+
+</html>

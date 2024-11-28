@@ -1,0 +1,108 @@
+    /* Google Fonts Import */
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&family=Montserrat:wght@400;500&display=swap');
+        
+    /* Basic Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        background-color: #222;
+    }
+
+    /* Sticky Navbar Styling */
+    .main-head {
+        width: 100%;
+        height: 54px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        z-index: 1000;
+    }
+    .main-head.slidedown {
+        position: fixed;
+        background: #000;
+        animation: slidedown .3s forwards;
+    }
+    #h{
+        color: #ff8800;
+    }
+    @keyframes slidedown {
+        from {
+            top: -250px;
+        }
+        to {
+            top: 0;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .main-head .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        height: 54px;
+    }
+    .main-head .navbar .logo {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 1.5em;
+        color: #ff8800;
+    }
+    .main-head .navbar .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        margin-right: 5%;
+    }
+    .main-head .navbar .nav-links li {
+        margin: 0;
+    }
+    .main-head .navbar .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+    .main-head.slidedown .navbar .nav-links a {
+        color: #fff;
+    }
+    .main-head .navbar .nav-links a:hover {
+        color: #ffa500;
+    }
+
+    /* Toggle Menu Button for Mobile */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #333;
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        .menu-toggle {
+            display: block;
+        }
+        .nav-links a {
+            padding: 10px;
+            display: block;
+        }
+    }

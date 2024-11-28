@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renax</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        header {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            color: #ff8800;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #h {
+            color: #ff8800;
+        }
+
+        .nav-links a:hover {
+            color: #ffa500; /* Orange color on hover */
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                display: block;
+            }
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #000; /* Fallback color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh; /* Limit image height */
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            color: #000;
+            padding: 5%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #ffa500;
+        }
+
+        .hero-content .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #ffa500;
+            color: #000;
+            border-radius: 50px;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff8800;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #000;
+            border-radius: 50px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .read .p1 {
+            font-weight: 200;
+            color: #ff8800;
+            font-size: x-small;
+            margin-top: 10%;
+            margin-left: 5%;
+        }
+
+        .read .h {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            color: black;
+            margin-left: 5%;
+        }
+
+        .read .h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            color: #ff8800;
+            margin-left: 5%;
+        }
+
+        .read .p2 {
+            font-size: medium;
+            color: #000000;
+            margin-left: 5%;
+        }
+
+        .read .p3 {
+            font-size: x-large;
+            color: #ffa500;
+            font-weight: 500;
+            margin-left: 7%;
+        }
+
+        .read .p4 {
+            font-size: x-large;
+            color: #ffa500;
+            font-weight: 500;
+            margin-left: 7%;
+        }
+
+        /* Logo section */
+        .logo {
+            background-color: #000;
+        }
+
+        .logo-container { 
+              display: flex;
+            justify-content: center; /* Center the logos */
+            gap: 30px; /* Space between logos */
+            margin: 40px 0; /* Space above and below */
+            margin-top: 10%;
+}
+
+
+        .logo-container img {
+            width: 200px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        
+        .footer {
+            padding: 20px;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            background-color: #222;
+        }
+
+        .contact-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .contact-item .icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f2a200;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0;
+        }
+
+        .footer-left, .footer-middle, .footer-right {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 30px;
+            color: #f2a200;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .footer-middle h3, .footer-right h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #f2a200;
+        }
+
+        .footer-middle ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-middle ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-middle ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-right form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #f2a200;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .footer-right input {
+            border: none;
+            padding: 10px;
+            flex: 1;
+            color: #000;
+        }
+
+        .footer-right button {
+            background-color: #f2a200;
+            border: none;
+            padding: 10px 20px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .icon i {
+            font-size: 30px;
+            color: #000000; /* Your icon color */
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-content p {
+                font-size: 1.2em;
+            }
+
+            .read .p2 {
+                font-size: medium;
+            }
+
+            .logo-container img {
+                width: 150px;
+            }
+
+            .read img {
+                width: 100%;
+                height: auto;
+                max-width: 600px; /* Adjust the max-width as needed */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 0;
+                left: 50%;
+                top: 40%;
+                transform: translate(-50%, -40%);
+            }
+
+            .hero-content h1 {
+                font-size: 2em;
+            }
+
+            .hero-content p {
+                font-size: 1em;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-left, .footer-middle, .footer-right {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .footer-right form {
+                flex-direction: column;
+            }
+
+            .footer-right input, .footer-right button {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .read img {
+                width: 100%;
+                height: auto;
+                max-width: 400px; /* Adjust the max-width as needed */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5em;
+            }
+
+            .hero-content p {
+                font-size: 0.9em;
+            }
+
+            .hero img {
+                height: 60vh;
+            }
+
+            .read .p2 {
+                font-size: small;
+            }
+
+            .logo-container img {
+                width: 120px;
+            }
+
+            .read img {
+                width: 100%;
+                height: auto;
+                max-width: 300px; /* Adjust the max-width as needed */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">RENAX</div>
+            <ul class="nav-links">
+                <li><a href="index.html" id="h">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <!-- Add the image tag here -->
+            <img src="img1.jpg" alt="Car Image"> <!-- Replace with your image path -->
+            <div class="hero-content">
+                <h1>Rental Car</h1>
+                <p>Rolls Royce Cullinan - $900 / DAY</p>
+                <div class="buttons">
+                    <button class="btn btn-primary">View Details</button>
+                    <button class="btn btn-secondary">Rent Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <main>
+        <div class="read">
+            <p class="p1">RENTAX</p>
+            <h1 class="h">We Are More Than</h1>
+            <h1 class="h1">A Car Rental Company</h1>
+            <p class="p2">Car repair quisque sodales dui ut varius vestibulum drana tortor turpis porttiton tellus<br> eu euismod nisl massa nutodio in the miss volume place urna lacinia eros <br>nunta urna mauris vehicula rutrum in the miss on volume interdum.</p>
+            <p class="p3">-Sports and Luxury Cars</p>
+            <p class="p4">-Economy Cars</p>
+        </div>
+    </main>
+    <section class="logo">
+        <div class="logo-container">
+            <img src="logo1.png" alt="Logo 1">
+            <img src="logo2.png" alt="Logo 2">
+            <img src="logo4.png" alt="Logo 3">
+            <img src="logo3.png" alt="Logo 4">
+            <img src="logo5.png" alt="Logo 5">
+            <img src="logo6.png" alt="Logo 6">
+            <img src="logo7.png" alt="Logo 7">
+            <img src="logo8.png" alt="Logo 7">
+
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-phone"></i> <!-- Call Icon -->
+                </div>
+                <p>Call us</p>
+                <p>+971 52-333-4444</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i> <!-- Email Icon -->
+                </div>
+                <p>Write to us</p>
+                <p>info@renax.com</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-map-marker-alt"></i> <!-- Address Icon -->
+                </div>
+                <p>Address</p>
+                <p>Dubai, Water Tower, Office 123</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <h2 class="footer-logo">RENAX</h2>
+                <p>Rent a car imperdiet sapien porttitor the bibenum ellenteseu the commodo erat nesuen.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">X</a>
+                    <a href="#" class="social-icon">TikTok</a>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Subscribe</h3>
+                <p>Want to be notified about our services? Just sign up and we'll send you a notification by email.</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">→</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Toggle navigation for mobile view
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script src="jQuery.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Fade in the hero image on page load
+            $(".hero img").hide().fadeIn(4000); 
+        });
+         // Fade-in the logo container when the page loads
+         $(document).ready(function () {
+            $(".logo-container").hide().fadeIn(8000); // Fade in over 3 seconds
+        });
+    </script>
+    
+</body>
+</html>

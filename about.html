@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENAX | About Us</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">RENAX</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" id="h">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+            </nav>
+        </header>
+    
+        <!-- About Us Section -->
+        <main>
+            <section class="raj">
+                <img src="img2.jpg" alt="Car Image">
+                <div class="raj-content">
+                    <p>RENAX</p>
+                    <h1>About Us</h1> 
+                </div>
+            </section>
+    
+            <!-- Promo Section -->
+            <section class="promo-section">
+                <img src="img8.jpg" alt="Car Promo Video" class="promo-image">
+                <div class="overlay">
+                    <p class="explore-text">EXPLORE</p>
+                    <h1>Car <span>Promo Video</span></h1>
+                    <a href="https://youtu.be/1LxcTt1adfY?si=iVbrSuzxfbyQchPz" class="play-button" target="_blank">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </section>
+        </main>
+    
+        <div class="h2">
+            <h2>Our Experts Team</h2>
+        </div>
+        <div class="container">
+            <div class="card">
+              <div class="info-icon">i</div>
+              <img src="emp3.jpg" alt="Margaret Nancy">
+              <div class="card-content">
+                <h2 class="card-title">Margaret Nancy</h2>
+                <p class="card-text">Sales Department</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="info-icon">i</div>
+              <img src="emp2.jpg" alt="Mia Jane">
+              <div class="card-content">
+                <h2 class="card-title">Mia Jane</h2>
+                <p class="card-text">Finance Department</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="info-icon">i</div>
+              <img src="emp1.jpg" alt="Micheal Brown">
+              <div class="card-content">
+                <h2 class="card-title">Micheal Brown</h2>
+                <p class="card-text">Sales Consultant</p>
+              </div>
+            </div>
+          </div>
+    
+    
+        
+         <footer class="footer">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">
+                        <i class="fas fa-phone"></i> <!-- Call Icon -->
+                    </div>
+                    <p>Call us</p>
+                    <p>+971 52-333-4444</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i> <!-- Email Icon -->
+                    </div>
+                    <p>Write to us</p>
+                    <p>info@renax.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i> <!-- Address Icon -->
+                    </div>
+                    <p>Address</p>
+                    <p>Dubai, Water Tower, Office 123</p>
+                </div>
+            </div>
+        
+    
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <h2 class="footer-logo">RENAX</h2>
+                    <p>Rent a car imperdiet sapien porttitor the bibenum ellenteseu the commodo erat nesuen.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">Facebook</a>
+                        <a href="#" class="social-icon">X</a>
+                        <a href="#" class="social-icon">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-middle">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h3>Subscribe</h3>
+                    <p>Want to be notified about our services? Just sign up and we'll send you a notification by email.</p>
+                    <form>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <script>
+            // Toggle navigation for mobile view
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+    
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        </script>
+        <script src="jQuery.js"></script>
+        <script>
+        $(document).ready(function () {
+            setInterval(function () {
+                $('.play-button').animate({ marginTop: '-10px' }, 200)
+                    .animate({ marginTop: '0px' }, 200);
+            }, 1000); // Repeat every 1 second
+        });
+    </script>
+        
+</body>
+
+</html>
